@@ -4,8 +4,21 @@ import { Button, ErrorNote, Field } from "../components/ui";
 import { functionsUrl, SUPABASE_PUBLISHABLE_KEY, setDemo } from "../lib/config";
 import { supabase } from "../lib/db";
 
+// Der Link zur ersten Registrierung enthält den Einrichtungscode (…/?code=XXXX-XXXX-XXXX).
+function codeFromUrl(): string {
+  return new URLSearchParams(window.location.search).get("code") ?? "";
+}
+
+function removeCodeFromUrl(): void {
+  const url = new URL(window.location.href);
+  if (!url.searchParams.has("code")) return;
+  url.searchParams.delete("code");
+  window.history.replaceState(window.history.state, "", url);
+}
+
 export function LoginPage() {
   const [mode, setMode] = useState<"checking" | "login" | "register">("checking");
+  const [code, setCode] = useState(codeFromUrl);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,10 +40,11 @@ export function LoginPage() {
         const res = await fetch(functionsUrl("register"), {
           method: "POST",
           headers: { "Content-Type": "application/json", apikey: SUPABASE_PUBLISHABLE_KEY },
-          body: JSON.stringify({ email, password, name }),
+          body: JSON.stringify({ email, password, name, code }),
         });
         const body = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(body.error ?? "Konto konnte nicht angelegt werden.");
+        removeCodeFromUrl();
       }
       const { error: signInError } = await supabase!.auth.signInWithPassword({ email: email.trim(), password });
       if (signInError) {
@@ -73,6 +87,20 @@ export function LoginPage() {
                 </p>
               )}
             </div>
+            {mode === "register" && (
+              <Field label="Einrichtungscode" hint="Du hast ihn zusammen mit dem Link zur App bekommen.">
+                <input
+                  className="input"
+                  value={code}
+                  onChange={(e) => setCode(e.target.value)}
+                  placeholder="XXXX-XXXX-XXXX"
+                  autoComplete="off"
+                  autoCapitalize="characters"
+                  spellCheck={false}
+                  required
+                />
+              </Field>
+            )}
             {mode === "register" && (
               <Field label="Dein Vorname">
                 <input className="input" value={name} onChange={(e) => setName(e.target.value)} autoComplete="given-name" required />

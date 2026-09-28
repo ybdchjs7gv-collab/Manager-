@@ -2,24 +2,76 @@
 -- Wird von scripts/test-db.sh gegen ein lokales Postgres ausgeführt.
 \set ON_ERROR_STOP on
 
+do $$ begin raise notice 'Test: Einrichtungscode und Registrierungs-Tickets'; end $$;
+do $$
+begin
+  assert (select decrypted_secret from vault.decrypted_secrets where name = 'setup_code')
+    ~ '^[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}$', 'Einrichtungscode fehlt oder hat ein falsches Format';
+
+  -- Ohne Ticket (öffentliche Auth-Registrierung) wird kein Konto angelegt
+  begin
+    insert into auth.users (id, email) values ('11111111-1111-1111-1111-111111111111', 'owner@example.com');
+    raise exception 'Konto ohne Ticket angelegt';
+  exception when raise_exception then
+    if sqlerrm not like 'Registrierung nur über die App%' then raise; end if;
+  end;
+  begin
+    insert into auth.users (id, email, raw_user_meta_data)
+    values ('11111111-1111-1111-1111-111111111111', 'owner@example.com', '{"registration_nonce": "erfunden"}');
+    raise exception 'Konto mit erfundenem Ticket angelegt';
+  exception when raise_exception then
+    if sqlerrm not like 'Registrierung nur über die App%' then raise; end if;
+  end;
+
+  insert into public.registration_tickets (nonce, created_at) values ('abgelaufen', now() - interval '1 hour');
+  begin
+    insert into auth.users (id, email, raw_user_meta_data)
+    values ('11111111-1111-1111-1111-111111111111', 'owner@example.com', '{"registration_nonce": "abgelaufen"}');
+    raise exception 'abgelaufenes Ticket akzeptiert';
+  exception when raise_exception then
+    if sqlerrm not like 'Registrierung nur über die App%' then raise; end if;
+  end;
+end $$;
+
+set role anon;
+do $$
+begin
+  begin
+    perform 1 from public.registration_tickets;
+    raise exception 'anon kann Tickets lesen';
+  exception when insufficient_privilege then null;
+  end;
+  begin
+    insert into public.registration_tickets (nonce) values ('selbstgemacht');
+    raise exception 'anon kann Tickets anlegen';
+  exception when insufficient_privilege then null;
+  end;
+end $$;
+reset role;
+
 do $$ begin raise notice 'Test: erstes Konto anlegen'; end $$;
-insert into auth.users (id, email) values ('11111111-1111-1111-1111-111111111111', 'owner@example.com');
+insert into public.registration_tickets (nonce) values ('ticket-1');
+insert into auth.users (id, email, raw_user_meta_data)
+values ('11111111-1111-1111-1111-111111111111', 'owner@example.com', '{"registration_nonce": "ticket-1"}');
 
 do $$
 begin
   assert (select count(*) from public.settings) = 1, 'settings-Zeile fehlt';
   assert public.owner_exists(), 'owner_exists sollte true sein';
   assert (select count(*) from public.owner_lock) = 1, 'owner_lock fehlt';
+  assert not exists (select 1 from public.registration_tickets where nonce = 'ticket-1'), 'Ticket wurde nicht verbraucht';
 end $$;
 
--- Zweites Konto muss scheitern
+-- Zweites Konto muss scheitern, auch mit gültigem Ticket
 do $$
 begin
+  insert into public.registration_tickets (nonce) values ('ticket-2');
   begin
-    insert into auth.users (id, email) values ('22222222-2222-2222-2222-222222222222', 'fremd@example.com');
+    insert into auth.users (id, email, raw_user_meta_data)
+    values ('22222222-2222-2222-2222-222222222222', 'fremd@example.com', '{"registration_nonce": "ticket-2"}');
     raise exception 'zweites Konto wurde nicht blockiert';
   exception when raise_exception then
-    if sqlerrm like 'zweites Konto%' then raise; end if;
+    if sqlerrm not like 'Registrierung geschlossen%' then raise; end if;
   end;
 end $$;
 

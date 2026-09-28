@@ -66,8 +66,12 @@ Danach baut GitHub die App bei jeder Änderung neu. Adresse: `https://<benutzern
 Solange kein Server eingetragen ist, startet die App im **Demo-Modus** mit Beispieldaten.
 
 ### 3. Konto anlegen
-Die Adresse öffnen – beim ersten Mal erscheint „Konto anlegen“. Danach ist die Registrierung geschlossen:
-Außer dir kann sich niemand ein Konto anlegen.
+Die Datenbank erzeugt beim Einrichten einen **Einrichtungscode** (Format `XXXX-XXXX-XXXX`). Er steht nur im Tresor:
+```sql
+select decrypted_secret from vault.decrypted_secrets where name = 'setup_code';
+```
+Die Adresse mit dem Code öffnen – `https://<benutzername>.github.io/Manager-/?code=XXXX-XXXX-XXXX` – und „Konto anlegen“ ausfüllen
+(der Code lässt sich auch von Hand eintippen). Danach ist die Registrierung geschlossen: Außer dir kann sich niemand ein Konto anlegen.
 
 ### 4. Auf iPhone und Laptop installieren
 - **iPhone:** In Safari öffnen → Teilen-Symbol → „Zum Home-Bildschirm“.
@@ -104,7 +108,8 @@ In der App: Nachrichten → WhatsApp → „Chat importieren“.
 - Alle Daten liegen in deinem eigenen Supabase-Projekt (Rechenzentrum Frankfurt). Jede Tabelle ist per Row Level Security nur für dein Konto lesbar.
 - Passwörter und der KI-Schlüssel liegen verschlüsselt im Supabase-Tresor (Vault). Die App kann sie speichern, aber nie wieder auslesen –
   nur die Server-Funktionen verwenden sie beim Abrufen.
-- Die Registrierung ist nach dem ersten Konto gesperrt.
+- Ein Konto entsteht nur über die App mit dem Einrichtungscode; die Datenbank weist jede andere Registrierung ab.
+  Nach dem ersten Konto ist die Registrierung ganz gesperrt.
 - Mailinhalte werden zur Auswertung an Claude geschickt (nur wenn du einen Schlüssel hinterlegst). Die KI bekommt die Anweisung, Inhalte
   nur als Daten zu behandeln – Befehle in Mails werden nicht befolgt. Automatisch gelöscht wird nur, was die Mail selbst als Massenversand
   kennzeichnet (Kopfzeilen wie `List-Unsubscribe`) **und** was die KI als Newsletter/Werbung einstuft.

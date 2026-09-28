@@ -18,6 +18,7 @@ grant usage on schema public, extensions, auth to anon, authenticated, service_r
 create table auth.users (
   id uuid primary key default gen_random_uuid(),
   email text unique,
+  raw_user_meta_data jsonb,
   created_at timestamptz not null default now()
 );
 

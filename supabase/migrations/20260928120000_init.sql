@@ -577,7 +577,8 @@ create trigger calendar_connections_drop_secret after delete on public.calendar_
   for each row execute function public.drop_linked_secret('cal');
 
 -- ---------------------------------------------------------------------------
--- Registrierung: nur ein Konto (die Besitzerin) darf existieren.
+-- Registrierung: nur ein Konto (die Besitzerin) darf existieren, und es
+-- entsteht nur über die Funktion "register" mit dem Einrichtungscode.
 -- ---------------------------------------------------------------------------
 
 -- Genau eine Zeile erlaubt: schützt auch vor zwei gleichzeitigen Registrierungen.
@@ -588,6 +589,39 @@ create table public.owner_lock (
 
 alter table public.owner_lock enable row level security;
 
+-- Einmal-Tickets der Funktion "register". Konten ohne Ticket (z. B. über die
+-- öffentliche Auth-Registrierung) werden abgewiesen.
+create table public.registration_tickets (
+  nonce text primary key,
+  created_at timestamptz not null default now()
+);
+
+alter table public.registration_tickets enable row level security;
+revoke all on public.registration_tickets from anon, authenticated;
+
+-- Einrichtungscode für die erste Registrierung. Er steht nur im Tresor:
+--   select decrypted_secret from vault.decrypted_secrets where name = 'setup_code';
+do $$
+declare
+  v_alphabet constant text := 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  v_bytes bytea := uuid_send(gen_random_uuid()) || uuid_send(gen_random_uuid());
+  v_code text := '';
+  v_pos int;
+begin
+  if exists (select 1 from vault.secrets where name = 'setup_code') then
+    return;
+  end if;
+  -- Bytes 6 und 8 einer UUID enthalten feste Versionsbits; die ersten sechs sind rein zufällig.
+  foreach v_pos in array array[0, 1, 2, 3, 4, 5, 16, 17, 18, 19, 20, 21] loop
+    v_code := v_code || substr(v_alphabet, 1 + get_byte(v_bytes, v_pos) % 32, 1);
+    if length(v_code) in (4, 9) then
+      v_code := v_code || '-';
+    end if;
+  end loop;
+  perform vault.create_secret(v_code, 'setup_code', 'Manager: Einrichtungscode für die erste Registrierung');
+end;
+$$;
+
 create or replace function public.enforce_single_owner()
 returns trigger
 language plpgsql
@@ -595,6 +629,12 @@ security definer
 set search_path = ''
 as $$
 begin
+  delete from public.registration_tickets
+  where nonce = new.raw_user_meta_data ->> 'registration_nonce'
+    and created_at > now() - interval '10 minutes';
+  if not found then
+    raise exception 'Registrierung nur über die App möglich.';
+  end if;
   if exists (select 1 from auth.users) then
     raise exception 'Registrierung geschlossen: Diese App hat bereits ein Konto.';
   end if;
