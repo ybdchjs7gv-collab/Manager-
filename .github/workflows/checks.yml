@@ -1,0 +1,48 @@
+name: Prüfungen
+
+on:
+  push:
+    paths:
+      - "supabase/**"
+      - ".github/workflows/checks.yml"
+  pull_request:
+
+jobs:
+  functions:
+    name: Server-Funktionen
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: supabase/functions
+    steps:
+      - uses: actions/checkout@v7
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - run: deno lint
+      - run: deno check */index.ts
+      - run: deno test -A _shared/shared_test.ts
+
+  database:
+    name: Datenbank
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v7
+      - run: scripts/test-db.sh
+        env:
+          PGHOST: localhost
+          PGPORT: 5432
+          PGUSER: postgres
+          PGPASSWORD: postgres

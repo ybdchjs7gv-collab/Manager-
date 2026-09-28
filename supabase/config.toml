@@ -1,0 +1,21 @@
+# Nur für die Supabase-CLI (supabase functions deploy / supabase db push).
+# Die Funktionen prüfen die Anmeldung selbst, daher verify_jwt = false.
+project_id = "manager"
+
+[functions.register]
+verify_jwt = false
+
+[functions.mail-sync]
+verify_jwt = false
+
+[functions.mail-action]
+verify_jwt = false
+
+[functions.ai]
+verify_jwt = false
+
+[functions.calendar-sync]
+verify_jwt = false
+
+[functions.calendar-feed]
+verify_jwt = false
