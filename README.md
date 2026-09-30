@@ -50,7 +50,7 @@ Wichtiges rechtzeitig erledigt wird und trotzdem Freizeit bleibt.
 ## Einrichtung
 
 ### 1. Server (Supabase)
-Die App speichert deine Daten in einem eigenen Supabase-Projekt in Frankfurt. Einmalige Schritte (erledigt Claude für dich):
+Die App speichert deine Daten in einem eigenen Supabase-Projekt in der EU (Rechenzentrum Irland). Einmalige Schritte (erledigt Claude für dich):
 1. Datenbank-Migrationen aus `supabase/migrations/` einspielen.
 2. Die Server-Funktionen aus `supabase/functions/` bereitstellen (alle mit `verify_jwt = false`, sie prüfen die Anmeldung selbst).
 3. Die Projekt-URL für die automatischen Abrufe im Tresor hinterlegen:
@@ -105,7 +105,7 @@ In der App: Nachrichten → WhatsApp → „Chat importieren“.
 - **GitHub Pages:** kostenlos.
 
 ## Datenschutz & Sicherheit
-- Alle Daten liegen in deinem eigenen Supabase-Projekt (Rechenzentrum Frankfurt). Jede Tabelle ist per Row Level Security nur für dein Konto lesbar.
+- Alle Daten liegen in deinem eigenen Supabase-Projekt (Rechenzentrum Irland, EU). Jede Tabelle ist per Row Level Security nur für dein Konto lesbar.
 - Passwörter und der KI-Schlüssel liegen verschlüsselt im Supabase-Tresor (Vault). Die App kann sie speichern, aber nie wieder auslesen –
   nur die Server-Funktionen verwenden sie beim Abrufen.
 - Ein Konto entsteht nur über die App mit dem Einrichtungscode; die Datenbank weist jede andere Registrierung ab.
