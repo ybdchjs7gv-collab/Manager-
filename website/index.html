@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thilo Schauff · Property Management seit 1994</title>
   <meta name="description" content="Thilo Schauff – Property Management seit 1994, Gesellschafter der Laguna Immobilienmanagement GmbH und Berater für Eigentümer und Investoren.">
+  <meta name="theme-color" content="#13221c">
   <meta property="og:title" content="Thilo Schauff · Property Management seit 1994">
   <meta property="og:description" content="Gesellschafter der Laguna Immobilienmanagement GmbH · Berater für Eigentümer und Investoren.">
   <meta property="og:type" content="website">
@@ -16,57 +17,66 @@
 </head>
 <body>
 
-  <header class="kopf">
-    <a class="kopf__name" href="#top">Thilo Schauff<sup>°</sup></a>
-    <span class="kopf__claim">Property Management<br>seit 1994</span>
-    <nav class="kopf__nav" aria-label="Hauptnavigation">
-      <a href="#ueber">Über mich</a>
-      <a href="#werdegang">Werdegang</a>
-      <a href="#heute">Heute</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-  </header>
-
   <main id="top">
 
     <!-- Einstieg -->
     <section class="hero">
-      <div class="hero__wasserzeichen" aria-hidden="true">SCHAUFF</div>
-
-      <div class="hero__meta mono">
-        <span>N 51.571° &nbsp;E 8.106°</span>
-        <span>Soest / Berlin</span>
-      </div>
+      <header class="kopf">
+        <a class="kopf__name" href="#top">Thilo Schauff<span class="punkt">.</span></a>
+        <span class="kopf__claim mono">Property Management<br>seit 1994</span>
+        <nav class="kopf__nav" aria-label="Hauptnavigation">
+          <a href="#ueber">Über mich</a>
+          <a href="#werdegang">Werdegang</a>
+          <a href="#heute">Heute</a>
+          <a class="kopf__kontakt" href="#kontakt">Kontakt</a>
+        </nav>
+      </header>
 
       <div class="hero__inhalt">
         <p class="hero__intro reveal">
-          Property Management seit 1994 · Gesellschafter der Laguna Immobilienmanagement GmbH
-          · Berater für Eigentümer und Investoren.
+          Property Management seit 1994. Gesellschafter der Laguna Immobilienmanagement GmbH.
+          Berater für Eigentümer und Investoren.
         </p>
-        <a class="plus-link reveal" href="#kontakt"><span aria-hidden="true">+</span> Kontakt aufnehmen</a>
+        <a class="pfeil-link reveal" href="#kontakt">Kontakt aufnehmen <span aria-hidden="true">→</span></a>
       </div>
 
       <figure class="portrait reveal">
         <!-- Portrait einfach als bilder/portrait.jpg ablegen (Hochformat, ca. 1200 × 1500 px). -->
         <img src="bilder/portrait.jpg" alt="Thilo Schauff" width="1200" height="1500"
              onerror="this.parentNode.classList.add('portrait--leer'); this.remove();">
-        <figcaption class="mono">Thilo Schauff — Soest</figcaption>
+        <figcaption class="mono">Soest / Berlin</figcaption>
       </figure>
 
       <div class="hero__fuss">
-        <h1 class="riesig">Thilo Schauff</h1>
-        <span class="uhr mono" aria-live="off">Soest <time id="uhr">--:--</time></span>
+        <h1 class="riesig">Thilo<br>Schauff<span class="punkt">.</span></h1>
+        <div class="hero__daten mono">
+          <span>N 51.571° E 8.106°</span>
+          <span>Soest <time id="uhr">--:--</time></span>
+        </div>
       </div>
     </section>
 
+    <!-- Laufband -->
+    <div class="band" aria-hidden="true">
+      <div class="band__spur">
+        <span>Property Management</span><i>✳</i><span>Seit 1994</span><i>✳</i>
+        <span>Alle Assetklassen</span><i>✳</i><span>Beratung</span><i>✳</i>
+        <span>Interim-Mandate</span><i>✳</i><span>Soest / Berlin</span><i>✳</i>
+        <span>Property Management</span><i>✳</i><span>Seit 1994</span><i>✳</i>
+        <span>Alle Assetklassen</span><i>✳</i><span>Beratung</span><i>✳</i>
+        <span>Interim-Mandate</span><i>✳</i><span>Soest / Berlin</span><i>✳</i>
+      </div>
+    </div>
+
     <!-- 01 Über mich -->
     <section class="abschnitt" id="ueber">
-      <h2 class="label mono"><span>(01)</span> Über mich</h2>
+      <h2 class="label mono"><span>01</span>Über mich</h2>
       <div class="abschnitt__inhalt">
         <p class="gross reveal">
-          Property Management begleitet mich seit 1994, für institutionelle und private Eigentümer
-          und über alle Assetklassen hinweg. Mit der Laguna Immobilienmanagement GmbH habe ich ein
-          Unternehmen aufgebaut und geführt, das für ein klares Verständnis dieser Aufgabe steht.
+          Property Management begleitet mich seit <em>1994</em>, für institutionelle und private
+          Eigentümer und über alle Assetklassen hinweg. Mit der Laguna Immobilienmanagement GmbH
+          habe ich ein Unternehmen aufgebaut und geführt, das für ein klares Verständnis dieser
+          Aufgabe steht.
         </p>
         <p class="reveal">
           Heute bringe ich diese Erfahrung auch dort ein, wo Eigentümer, Investoren und Unternehmen
@@ -77,8 +87,8 @@
 
     <!-- 02 Verständnis -->
     <section class="abschnitt" id="verstaendnis">
-      <h2 class="label mono"><span>(02)</span> Mein Verständnis von Property Management</h2>
-      <div class="abschnitt__inhalt">
+      <h2 class="label mono"><span>02</span>Mein Verständnis</h2>
+      <div class="abschnitt__inhalt spalten">
         <p class="reveal">
           Gutes Property Management braucht ein Team von Kümmerern: Menschen mit fundierter
           Fachkompetenz, die Verantwortung übernehmen und proaktiv und vorausschauend handeln.
@@ -89,19 +99,24 @@
           weiteren Partnern rund um die Immobilie.
         </p>
       </div>
+    </section>
+
+    <section class="zitat-block">
       <blockquote class="zitat reveal">
         „Ein Team von Kümmerern: fachkundig, vorausschauend und im engen Schulterschluss
         mit allen Beteiligten.“
       </blockquote>
+      <span class="mono zitat-block__quelle">— Thilo Schauff</span>
     </section>
 
     <!-- 03 Werdegang -->
     <section class="abschnitt" id="werdegang">
-      <h2 class="label mono"><span>(03)</span> Werdegang</h2>
-      <ol class="zeitleiste abschnitt__inhalt">
+      <h2 class="label mono"><span>03</span>Werdegang</h2>
+      <ol class="zeitleiste">
         <li class="reveal">
-          <span class="zeitleiste__jahr mono">1994–2014</span>
+          <span class="zeitleiste__jahr">1994</span>
           <div>
+            <span class="mono zeitleiste__zeit">1994 – 2014</span>
             <h3>Thilo Schauff Immobilienverwaltung GmbH</h3>
             <p>Gründung und Aufbau zu einem bundesweit tätigen Property Manager für
               Gewerbeimmobilien – als geschäftsführender Gesellschafter. Später unter dem
@@ -109,24 +124,27 @@
           </div>
         </li>
         <li class="reveal">
-          <span class="zeitleiste__jahr mono">2014–2016</span>
+          <span class="zeitleiste__jahr">2014</span>
           <div>
+            <span class="mono zeitleiste__zeit">2014 – 2016</span>
             <h3>Orangefield Group</h3>
             <p>Verkauf des Unternehmens an die internationale Orangefield Group;
               anschließend Sprecher der Geschäftsführung der deutschen Gesellschaften.</p>
           </div>
         </li>
         <li class="reveal">
-          <span class="zeitleiste__jahr mono">seit 2014</span>
+          <span class="zeitleiste__jahr">2014</span>
           <div>
+            <span class="mono zeitleiste__zeit">seit 2014</span>
             <h3>Laguna Immobilienmanagement GmbH</h3>
             <p>Gesellschafter. Property Management für institutionelle und private
               Eigentümer über alle Assetklassen.</p>
           </div>
         </li>
         <li class="reveal">
-          <span class="zeitleiste__jahr mono">heute</span>
+          <span class="zeitleiste__jahr">Heute</span>
           <div>
+            <span class="mono zeitleiste__zeit">laufend</span>
             <h3>Beratung &amp; Interim-Mandate</h3>
             <p>Für Eigentümer, Investoren und Property-Management-Unternehmen.</p>
           </div>
@@ -136,79 +154,77 @@
 
     <!-- 04 Heute -->
     <section class="abschnitt" id="heute">
-      <h2 class="label mono"><span>(04)</span> Was ich heute mache</h2>
-      <div class="karten abschnitt__inhalt">
-        <article class="karte reveal">
-          <span class="karte__nr mono">A</span>
-          <h3>Laguna Immobilienmanagement GmbH</h3>
+      <h2 class="label mono"><span>04</span>Was ich heute mache</h2>
+      <div class="karten">
+        <a class="karte reveal" href="https://laguna-immobilienmanagement.de/" target="_blank" rel="noopener">
+          <span class="karte__kopf mono"><span>A</span><span>Unternehmen ↗</span></span>
+          <h3>Laguna Immobilien&shy;management GmbH</h3>
           <p>Property Management für institutionelle und private Eigentümer, alle Assetklassen.</p>
-          <a class="plus-link" href="https://laguna-immobilienmanagement.de/" target="_blank" rel="noopener">
-            <span aria-hidden="true">↗</span> laguna-immobilienmanagement.de
-          </a>
-        </article>
-        <article class="karte reveal">
-          <span class="karte__nr mono">B</span>
+          <span class="karte__link mono">laguna-immobilienmanagement.de</span>
+        </a>
+        <a class="karte karte--hell reveal" href="#kontakt">
+          <span class="karte__kopf mono"><span>B</span><span>Anfrage →</span></span>
           <h3>Beratung &amp; Interim-Mandate</h3>
           <p>Unterstützung für Eigentümer, Investoren und Property-Management-Unternehmen,
             etwa bei Organisation, Prozessen, Mandatsübernahmen oder in Übergangsphasen.</p>
-          <a class="plus-link" href="#kontakt"><span aria-hidden="true">+</span> Anfrage stellen</a>
-        </article>
+          <span class="karte__link mono">Jetzt anfragen</span>
+        </a>
       </div>
     </section>
 
     <!-- 05 Kontakt -->
-    <section class="abschnitt abschnitt--kontakt" id="kontakt">
-      <h2 class="label mono"><span>(05)</span> Kontakt</h2>
-      <div class="abschnitt__inhalt">
-        <p class="gross reveal">Ich freue mich über Ihre Nachricht.</p>
-
-        <form class="formular reveal" id="formular" action="kontakt.php" method="post" novalidate>
-          <div class="feld">
-            <label for="f-name">Name</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120">
-          </div>
-          <div class="feld">
-            <label for="f-email">E-Mail</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
-          </div>
-          <div class="feld">
-            <label for="f-firma">Unternehmen <span class="optional">(optional)</span></label>
-            <input id="f-firma" name="firma" type="text" autocomplete="organization" maxlength="160">
-          </div>
-          <div class="feld">
-            <label for="f-telefon">Telefon <span class="optional">(optional)</span></label>
-            <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" maxlength="60">
-          </div>
-          <div class="feld feld--breit">
-            <label for="f-nachricht">Nachricht</label>
-            <textarea id="f-nachricht" name="nachricht" rows="5" required maxlength="5000"></textarea>
-          </div>
-
-          <!-- Spam-Schutz: für Menschen unsichtbar -->
-          <div class="honig" aria-hidden="true">
-            <label for="f-website">Website</label>
-            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
-          </div>
-          <input type="hidden" name="t" id="f-zeit" value="">
-
-          <label class="einwilligung feld--breit">
-            <input type="checkbox" name="einwilligung" value="ja" required>
-            <span>Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage
-              verwendet werden. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
-          </label>
-
-          <div class="formular__fuss feld--breit">
-            <button class="knopf" type="submit"><span aria-hidden="true">+</span> Nachricht senden</button>
-            <p class="formular__status" id="status" role="status" aria-live="polite"></p>
-          </div>
-        </form>
-
+    <section class="kontakt" id="kontakt">
+      <div class="kontakt__links">
+        <h2 class="label mono"><span>05</span>Kontakt</h2>
+        <p class="kontakt__titel reveal">Ich freue mich über Ihre Nachricht<span class="punkt">.</span></p>
         <dl class="direkt mono reveal">
           <div><dt>E-Mail</dt><dd><a href="mailto:thilo@schauff.de">thilo@schauff.de</a></dd></div>
+          <!-- LINK PRÜFEN: echte LinkedIn-Profiladresse eintragen -->
           <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/thilo-schauff/" target="_blank" rel="noopener">Thilo Schauff ↗</a></dd></div>
           <div><dt>Standorte</dt><dd>Soest / Berlin</dd></div>
         </dl>
       </div>
+
+      <form class="formular reveal" id="formular" action="kontakt.php" method="post" novalidate>
+        <div class="feld">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120">
+        </div>
+        <div class="feld">
+          <label for="f-email">E-Mail</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
+        </div>
+        <div class="feld">
+          <label for="f-firma">Unternehmen <span class="optional">(optional)</span></label>
+          <input id="f-firma" name="firma" type="text" autocomplete="organization" maxlength="160">
+        </div>
+        <div class="feld">
+          <label for="f-telefon">Telefon <span class="optional">(optional)</span></label>
+          <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" maxlength="60">
+        </div>
+        <div class="feld feld--breit">
+          <label for="f-nachricht">Nachricht</label>
+          <textarea id="f-nachricht" name="nachricht" rows="5" required maxlength="5000"></textarea>
+        </div>
+
+        <!-- Spam-Schutz: für Menschen unsichtbar -->
+        <div class="honig" aria-hidden="true">
+          <label for="f-website">Website</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="t" id="f-zeit" value="">
+
+        <label class="einwilligung feld--breit">
+          <input type="checkbox" name="einwilligung" value="ja" required>
+          <span>Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage
+            verwendet werden. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
+        </label>
+
+        <div class="formular__fuss feld--breit">
+          <button class="knopf" type="submit">Nachricht senden <span aria-hidden="true">→</span></button>
+          <p class="formular__status" id="status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
     </section>
 
   </main>
