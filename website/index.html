@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thilo Schauff · Property Management seit 1994</title>
-  <meta name="description" content="Thilo Schauff – Property Management seit 1994, Gesellschafter der Laguna Immobilienmanagement GmbH und Berater für Eigentümer und Investoren.">
+  <meta name="description" content="Thilo Schauff – Property Management seit 1994. Gründer der Estate-Visio, Gesellschafter der Laguna Immobilienmanagement GmbH, Berater für Eigentümer und Investoren.">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:title" content="Thilo Schauff · Property Management seit 1994">
-  <meta property="og:description" content="Gesellschafter der Laguna Immobilienmanagement GmbH · Berater für Eigentümer und Investoren.">
+  <meta property="og:description" content="Gründer der Estate-Visio · Gesellschafter der Laguna Immobilienmanagement GmbH · Berater für Eigentümer und Investoren.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thiloschauff.de/">
   <link rel="canonical" href="https://thiloschauff.de/">
@@ -18,92 +18,57 @@
 </head>
 <body>
 
-  <!-- Putz-Struktur: einmal definiert, überall als Hintergrund genutzt -->
-  <svg class="defs" aria-hidden="true" focusable="false">
-    <filter id="putz" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.0035 0.006" numOctaves="5" seed="7" result="rauschen"/>
-      <feDiffuseLighting in="rauschen" lighting-color="#efe5d8" surfaceScale="2.4" result="licht">
-        <feDistantLight azimuth="235" elevation="58"/>
-      </feDiffuseLighting>
-    </filter>
-    <filter id="putz-fein" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="4" seed="3" result="rauschen"/>
-      <feDiffuseLighting in="rauschen" lighting-color="#f1e9de" surfaceScale="1.2">
-        <feDistantLight azimuth="235" elevation="62"/>
-      </feDiffuseLighting>
-    </filter>
-  </svg>
-
-  <!-- Auftakt -->
-  <div class="vorhang" aria-hidden="true">
-    <span class="vorhang__name">Thilo Schauff</span>
-    <span class="vorhang__linie"></span>
-  </div>
-
-  <header class="kopf" id="kopf">
-    <nav class="kopf__links" aria-label="Hauptnavigation">
+  <header class="kopf">
+    <a class="kopf__name" href="#top">Thilo Schauff</a>
+    <span class="kopf__claim">Property Management<br>seit 1994</span>
+    <nav class="kopf__nav" aria-label="Hauptnavigation">
       <a href="#ueber">Über mich</a>
       <a href="#werdegang">Werdegang</a>
       <a href="#erfahrung">Erfahrung</a>
-      <a href="#heute">Heute</a>
+      <a href="#kontakt">Kontakt</a>
     </nav>
-    <a class="kopf__name" href="#top">Thilo Schauff</a>
-    <div class="kopf__rechts">
-      <a class="kopf__kontakt" href="#kontakt">Kontakt</a>
-    </div>
   </header>
 
   <main id="top">
 
-    <!-- Titel -->
+    <!-- Einstieg -->
     <section class="hero">
-      <div class="hero__grund" aria-hidden="true">
-        <svg class="putz" preserveAspectRatio="none"><rect width="100%" height="100%" filter="url(#putz)"/></svg>
-        <!-- Eigenes Titelbild als bilder/titelbild.jpg ablegen (Querformat, ca. 2400 × 1400 px). -->
-        <img class="hero__bild" src="bilder/titelbild.jpg" alt="" onerror="this.remove();">
-        <span class="hero__licht"></span>
+      <div class="hero__text">
+        <p class="hero__intro reveal">
+          Seit 1994 im Property Management. Gründer der Estate-Visio, Gesellschafter der
+          Laguna Immobilienmanagement GmbH und heute Berater für Eigentümer, Investoren und
+          Property-Management-Unternehmen.
+        </p>
+        <a class="plus-link reveal" href="#kontakt"><span aria-hidden="true">+</span> Kontakt aufnehmen</a>
       </div>
 
-      <div class="hero__inhalt">
-        <p class="hero__ueber">Property Management · seit 1994</p>
-        <h1 class="hero__titel">
-          <span class="zeile"><span>Thilo</span></span>
-          <span class="zeile"><span>Schauff</span></span>
-        </h1>
-        <p class="hero__unter">Gründer der Estate-Visio · Gesellschafter der Laguna Immobilienmanagement GmbH<br>Berater für Eigentümer und Investoren</p>
-        <a class="knopf knopf--hell" href="#kontakt">Kontakt aufnehmen</a>
-      </div>
+      <figure class="kachel kachel--portrait reveal">
+        <!-- Portrait als bilder/portrait.jpg ablegen (Hochformat). -->
+        <img src="bilder/portrait.jpg" alt="Thilo Schauff" onerror="this.remove();">
+        <figcaption class="mono">Thilo Schauff</figcaption>
+      </figure>
 
-      <a class="hero__scroll" href="#ueber" aria-label="Weiter nach unten"><span>Entdecken</span><i></i></a>
-    </section>
+      <figure class="kachel kachel--motiv reveal" aria-hidden="true">
+        <!-- Optional: bilder/objekt.jpg (z. B. ein betreutes Objekt) ersetzt die Zeichnung. -->
+        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+          <rect width="300" height="400" fill="#efefed"/>
+          <rect x="34" y="150" width="150" height="214" fill="#d9d9d6"/>
+          <rect x="184" y="96" width="82" height="268" fill="#c4c4c0"/>
+          <g fill="#2a2a2a" opacity=".82">
+            <rect x="54" y="190" width="7" height="120"/><rect x="76" y="190" width="7" height="120"/>
+            <rect x="98" y="190" width="7" height="120"/><rect x="120" y="190" width="7" height="120"/>
+            <rect x="142" y="190" width="7" height="120"/><rect x="164" y="190" width="7" height="120"/>
+          </g>
+          <rect x="206" y="250" width="38" height="114" fill="#1f4630"/>
+          <rect x="0" y="364" width="300" height="36" fill="#e3e3e0"/>
+        </svg>
+        <img src="bilder/objekt.jpg" alt="" onerror="this.remove();">
+        <figcaption class="mono">Gewerbeimmobilien</figcaption>
+      </figure>
 
-    <!-- Über mich -->
-    <section class="abschnitt zweispaltig" id="ueber">
-      <div>
-        <p class="ueberzeile reveal">Über mich</p>
-        <h2 class="titel reveal">Property Management <em>mit Haltung</em> – seit 1994.</h2>
-      </div>
-      <div class="fliesstext reveal">
-        <p class="anfang">
-          Property Management begleitet mich seit 1994, für institutionelle und private Eigentümer
-          und über alle Assetklassen hinweg.
-        </p>
-        <p>
-          Aus einer Hausverwaltung, mit der ich mich 1994 selbstständig gemacht habe, ist über zwei
-          Jahrzehnte einer der bekannten Property Manager für Gewerbeimmobilien in Deutschland
-          geworden – mit rund 1,5 Millionen Quadratmetern Gewerbefläche und etwa 2.000 Wohneinheiten
-          in Deutschland und der Schweiz. 2014 habe ich das Unternehmen an die internationale
-          Orangefield Group verkauft.
-        </p>
-        <p>
-          Mit der Laguna Immobilienmanagement GmbH habe ich anschließend ein Unternehmen aufgebaut
-          und geführt, das für ein klares Verständnis dieser Aufgabe steht.
-        </p>
-        <p>
-          Heute bringe ich diese Erfahrung auch dort ein, wo Eigentümer, Investoren und Unternehmen
-          einen erfahrenen Blick von außen suchen.
-        </p>
-        <a class="linie-link" href="#werdegang">Zum Werdegang</a>
+      <div class="hero__fuss">
+        <h1 class="riesig">Thilo Schauff</h1>
+        <span class="uhr mono">Soest&nbsp;&nbsp;<time id="uhr">--:--</time></span>
       </div>
     </section>
 
@@ -111,257 +76,165 @@
     <section class="zahlen" aria-label="Auf einen Blick">
       <div class="zahl reveal">
         <span class="zahl__wert" data-seit="1994">32</span>
-        <span class="zahl__text">Jahre im<br>Property Management</span>
+        <span class="zahl__text mono">Jahre Property Management</span>
       </div>
       <div class="zahl reveal">
-        <span class="zahl__wert">1,5<small>Mio. m²</small></span>
-        <span class="zahl__text">Gewerbefläche<br>verantwortet</span>
+        <span class="zahl__wert">1,5 Mio. m²</span>
+        <span class="zahl__text mono">Gewerbefläche verantwortet</span>
       </div>
       <div class="zahl reveal">
         <span class="zahl__wert">2.000</span>
-        <span class="zahl__text">Wohneinheiten<br>in der Verwaltung</span>
+        <span class="zahl__text mono">Wohneinheiten verwaltet</span>
       </div>
       <div class="zahl reveal">
         <span class="zahl__wert">2014</span>
-        <span class="zahl__text">Verkauf an die<br>Orangefield Group</span>
+        <span class="zahl__text mono">Verkauf an die Orangefield Group</span>
       </div>
     </section>
 
-    <!-- Verständnis -->
-    <section class="abschnitt" id="verstaendnis">
-      <header class="kopfzeile reveal">
-        <p class="ueberzeile">Mein Verständnis</p>
-        <h2 class="titel">Ein Team von Kümmerern</h2>
-      </header>
-
-      <div class="verstaendnis">
-        <figure class="portrait reveal">
-          <svg class="putz" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="100%" filter="url(#putz-fein)"/></svg>
-          <span class="monogramm" aria-hidden="true">T<i>S</i></span>
-          <!-- Portrait als bilder/portrait.jpg ablegen (Hochformat, ca. 1200 × 1500 px). -->
-          <img src="bilder/portrait.jpg" alt="Thilo Schauff" onerror="this.remove();">
-          <figcaption>Thilo Schauff · Soest</figcaption>
-        </figure>
-        <div class="verstaendnis__text">
-          <p class="reveal">
-            <span class="initial">G</span>utes Property Management braucht ein Team von Kümmerern: Menschen mit
-            fundierter Fachkompetenz, die Verantwortung übernehmen und proaktiv und vorausschauend handeln.
+    <!-- 01 Über mich -->
+    <section class="abschnitt" id="ueber">
+      <h2 class="label mono"><span>(01)</span> Über mich</h2>
+      <div class="abschnitt__inhalt">
+        <p class="gross reveal">
+          Property Management begleitet mich seit 1994, für institutionelle und private Eigentümer
+          und über alle Assetklassen hinweg.
+        </p>
+        <div class="spalten reveal">
+          <p>
+            Aus einer Hausverwaltung, mit der ich mich 1994 selbstständig gemacht habe, ist über zwei
+            Jahrzehnte einer der bekannten Property Manager für Gewerbeimmobilien in Deutschland
+            geworden – mit rund 1,5 Millionen Quadratmetern Gewerbefläche und etwa 2.000
+            Wohneinheiten in Deutschland und der Schweiz. 2014 habe ich das Unternehmen an die
+            internationale Orangefield Group verkauft.
           </p>
-          <p class="reveal">
+          <p>
+            Mit der Laguna Immobilienmanagement GmbH habe ich anschließend ein Unternehmen aufgebaut
+            und geführt, das für ein klares Verständnis dieser Aufgabe steht. Heute bringe ich diese
+            Erfahrung auch dort ein, wo Eigentümer, Investoren und Unternehmen einen erfahrenen
+            Blick von außen suchen.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Verständnis -->
+    <section class="abschnitt" id="verstaendnis">
+      <h2 class="label mono"><span>(02)</span> Mein Verständnis</h2>
+      <div class="abschnitt__inhalt">
+        <div class="spalten reveal">
+          <p>
+            Gutes Property Management braucht ein Team von Kümmerern: Menschen mit fundierter
+            Fachkompetenz, die Verantwortung übernehmen und proaktiv und vorausschauend handeln.
+          </p>
+          <p>
             Property Management ist dabei immer Teamwork, gemeinsam mit Eigentümern, Facility
             Management, Mietern, Stadt und Kommune, Werbegemeinschaften, Maklern und vielen
             weiteren Partnern rund um die Immobilie.
           </p>
-          <ul class="partner reveal" aria-label="Partner rund um die Immobilie">
-            <li>Eigentümer</li><li>Facility Management</li><li>Mieter</li><li>Stadt &amp; Kommune</li>
-            <li>Werbegemeinschaften</li><li>Makler</li>
+        </div>
+        <blockquote class="zitat reveal">
+          „Ein Team von Kümmerern: fachkundig, vorausschauend und im engen Schulterschluss
+          mit allen Beteiligten.“
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- 03 Werdegang -->
+    <section class="abschnitt" id="werdegang">
+      <h2 class="label mono"><span>(03)</span> Werdegang</h2>
+      <ol class="liste abschnitt__inhalt">
+        <li class="reveal">
+          <span class="liste__jahr mono">1991–1994</span>
+          <h3>Ausbildung zum Immobilienkaufmann</h3>
+          <p>Das Fundament der Immobilienwirtschaft.</p>
+        </li>
+        <li class="reveal">
+          <span class="liste__jahr mono">1994–2014</span>
+          <h3>Thilo Schauff Immobilienverwaltung / Estate-Visio</h3>
+          <p>1994 Gründung als Wohnungsverwaltung, 1996 GmbH mit Fokus auf Gewerbeimmobilien.
+            Als alleiniger geschäftsführender Gesellschafter Aufbau zu einem der bekannten Property
+            Manager in Deutschland: rund 1,5 Mio. m² Gewerbefläche und etwa 2.000 Wohneinheiten in
+            Deutschland und der Schweiz.</p>
+        </li>
+        <li class="reveal">
+          <span class="liste__jahr mono">2014–2016</span>
+          <h3>Orangefield Group</h3>
+          <p>Verkauf des Unternehmens an die internationale Orangefield Group; anschließend
+            Sprecher der Geschäftsführung der deutschen Gesellschaften.</p>
+        </li>
+        <li class="reveal">
+          <span class="liste__jahr mono">2016–2022</span>
+          <h3>Laguna Immobilienmanagement GmbH</h3>
+          <p>Aufbau und Führung als Geschäftsführer. Property Management für institutionelle und
+            private Eigentümer über alle Assetklassen. Bis heute Gesellschafter.</p>
+        </li>
+        <li class="reveal">
+          <span class="liste__jahr mono">heute</span>
+          <h3>Beratung &amp; Interim-Mandate</h3>
+          <p>Für Eigentümer, Investoren und Property-Management-Unternehmen – etwa bei
+            Organisation, Prozessen, Mandatsübernahmen oder in Übergangsphasen.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 04 Erfahrung -->
+    <section class="abschnitt" id="erfahrung">
+      <h2 class="label mono"><span>(04)</span> Erfahrung</h2>
+      <div class="abschnitt__inhalt erfahrung">
+        <div class="reveal">
+          <p class="unterlabel mono">Assetklassen</p>
+          <ul class="assets">
+            <li>Shopping-Center &amp; Centermanagement</li>
+            <li>Fachmarktzentren &amp; Retail Parks</li>
+            <li>Büro &amp; Unternehmenszentralen</li>
+            <li>Logistikimmobilien</li>
+            <li>Sonderimmobilien</li>
+            <li>Wohnen</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <p class="unterlabel mono">Ausgewählte Objekte</p>
+          <!-- BITTE PRÜFEN: Objekte aus öffentlich zugänglichen Lebenslauf-Angaben -->
+          <ul class="assets">
+            <li>Deutsche Welle <span>Zentrale, Berlin</span></li>
+            <li>adidas <span>Europa-Zentrale, Herzogenaurach</span></li>
+          </ul>
+          <p class="unterlabel mono" style="margin-top:40px">Heute</p>
+          <ul class="assets">
+            <li><a href="https://laguna-immobilienmanagement.de/" target="_blank" rel="noopener">Laguna Immobilienmanagement GmbH ↗</a> <span>Gesellschafter</span></li>
+            <li><a href="#kontakt">Beratung &amp; Interim-Mandate</a> <span>Soest / Berlin</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Zitat -->
-    <section class="zitat-band">
-      <svg class="putz" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="100%" filter="url(#putz)"/></svg>
-      <figure class="zitat reveal">
-        <blockquote>„Ein Team von Kümmerern: fachkundig, vorausschauend und im engen Schulterschluss mit allen Beteiligten.“</blockquote>
-        <figcaption>Thilo Schauff</figcaption>
-      </figure>
-    </section>
-
-    <!-- Werdegang -->
-    <section class="abschnitt" id="werdegang">
-      <header class="kopfzeile reveal">
-        <p class="ueberzeile">Werdegang</p>
-        <h2 class="titel">Stationen seit 1994</h2>
-      </header>
-
-      <ol class="zeitleiste" id="zeitleiste">
-        <li class="reveal">
-          <span class="zeitleiste__jahr">1991</span>
-          <div>
-            <p class="zeitleiste__zeit">1991 – 1994</p>
-            <h3>Ausbildung zum Immobilienkaufmann</h3>
-            <p>Das Fundament: Handwerkszeug der Immobilienwirtschaft von Grund auf.</p>
-          </div>
-        </li>
-        <li class="reveal">
-          <span class="zeitleiste__jahr">1994</span>
-          <div>
-            <p class="zeitleiste__zeit">1994 – 2014</p>
-            <h3>Gründer der Thilo Schauff Immobilienverwaltung</h3>
-            <p>1994 Start mit der Wohnungsverwaltung, 1996 Gründung der GmbH mit Fokus auf
-              Gewerbeimmobilien. Als alleiniger geschäftsführender Gesellschafter Aufbau zu einem
-              der bekannten Property Manager in Deutschland, später unter dem Namen Estate-Visio:
-              rund 1,5 Mio. m² Gewerbefläche und etwa 2.000 Wohneinheiten in Deutschland und der
-              Schweiz – Fachmarktzentren, Shopping-Center mit Centermanagement, Logistik, Büro- und
-              Sonderimmobilien.</p>
-          </div>
-        </li>
-        <li class="reveal">
-          <span class="zeitleiste__jahr">2014</span>
-          <div>
-            <p class="zeitleiste__zeit">2014 – 2016</p>
-            <h3>Verkauf an die Orangefield Group</h3>
-            <p>Übernahme des Unternehmens durch die internationale Orangefield Group.
-              Anschließend Sprecher der Geschäftsführung der deutschen Gesellschaften und
-              Begleitung der Integration.</p>
-          </div>
-        </li>
-        <li class="reveal">
-          <span class="zeitleiste__jahr">2016</span>
-          <div>
-            <p class="zeitleiste__zeit">2016 – 2022</p>
-            <h3>Laguna Immobilienmanagement GmbH</h3>
-            <p>Aufbau und Führung als Geschäftsführer: Property Management für institutionelle
-              und private Eigentümer über alle Assetklassen. Bis heute Gesellschafter.</p>
-          </div>
-        </li>
-        <li class="reveal">
-          <span class="zeitleiste__jahr">Heute</span>
-          <div>
-            <p class="zeitleiste__zeit">laufend</p>
-            <h3>Beratung &amp; Interim-Mandate</h3>
-            <p>Erfahrung aus drei Jahrzehnten – für Eigentümer, Investoren und
-              Property-Management-Unternehmen, die einen erfahrenen Blick von außen suchen.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <!-- Erfahrung / Referenzen -->
-    <section class="abschnitt" id="erfahrung">
-      <header class="kopfzeile reveal">
-        <p class="ueberzeile">Erfahrung</p>
-        <h2 class="titel">Alle Assetklassen. <em>Aus eigener Verantwortung.</em></h2>
-      </header>
-
-      <div class="erfahrung">
-        <ul class="assets reveal">
-          <li><span>01</span>Shopping-Center &amp; Centermanagement</li>
-          <li><span>02</span>Fachmarktzentren &amp; Retail Parks</li>
-          <li><span>03</span>Büro &amp; Unternehmenszentralen</li>
-          <li><span>04</span>Logistikimmobilien</li>
-          <li><span>05</span>Sonderimmobilien</li>
-          <li><span>06</span>Wohnen</li>
-        </ul>
-        <div class="objekte reveal">
-          <p class="ueberzeile">Ausgewählte Objekte</p>
-          <!-- BITTE PRÜFEN: Objekte aus öffentlich zugänglichen Lebenslauf-Angaben -->
-          <dl>
-            <div><dt>Deutsche Welle</dt><dd>Zentrale, Berlin</dd></div>
-            <div><dt>adidas</dt><dd>Europa-Zentrale, Herzogenaurach</dd></div>
-          </dl>
-          <p class="objekte__text">Für institutionelle und private Eigentümer – in Deutschland und der Schweiz.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Heute -->
-    <section class="abschnitt abschnitt--sand" id="heute">
-      <header class="kopfzeile reveal">
-        <p class="ueberzeile">Was ich heute mache</p>
-        <h2 class="titel">Unternehmen &amp; Beratung</h2>
-      </header>
-
-      <div class="karten">
-        <article class="karte reveal">
-          <a class="karte__bild" href="https://laguna-immobilienmanagement.de/" target="_blank" rel="noopener" aria-label="Website der Laguna Immobilienmanagement GmbH">
-            <!-- Architektur-Motiv: Fassade -->
-            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <defs>
-                <linearGradient id="himmel-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9e3da"/><stop offset="1" stop-color="#f4efe8"/></linearGradient>
-                <linearGradient id="wand-a" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c9b8a3"/><stop offset="1" stop-color="#b9a68f"/></linearGradient>
-                <linearGradient id="schatten-a" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8f7c66"/><stop offset="1" stop-color="#a28f78"/></linearGradient>
-              </defs>
-              <rect width="400" height="300" fill="url(#himmel-a)"/>
-              <rect width="400" height="300" filter="url(#putz-fein)" opacity=".35"/>
-              <rect x="40" y="95" width="210" height="160" fill="url(#wand-a)"/>
-              <rect x="250" y="60" width="120" height="195" fill="url(#schatten-a)"/>
-              <rect x="40" y="95" width="210" height="10" fill="#d8c9b6"/>
-              <g fill="#3f362d" opacity=".85">
-                <rect x="66" y="135" width="10" height="90"/><rect x="96" y="135" width="10" height="90"/>
-                <rect x="126" y="135" width="10" height="90"/><rect x="156" y="135" width="10" height="90"/>
-                <rect x="186" y="135" width="10" height="90"/><rect x="216" y="135" width="10" height="90"/>
-              </g>
-              <rect x="285" y="150" width="50" height="105" fill="#4a3f34"/>
-              <rect x="0" y="255" width="400" height="45" fill="#d9cdbd"/>
-              <rect x="0" y="255" width="400" height="3" fill="#bfae98"/>
-              <circle cx="330" cy="40" r="16" fill="#f7f2ea"/>
-            </svg>
-          </a>
-          <div class="karte__text">
-            <p class="ueberzeile">Gesellschafter · bis 2022 Geschäftsführer</p>
-            <h3>Laguna Immobilien&shy;management GmbH</h3>
-            <p>Property Management für institutionelle und private Eigentümer, alle Assetklassen.</p>
-            <a class="linie-link" href="https://laguna-immobilienmanagement.de/" target="_blank" rel="noopener">Zur Website</a>
-          </div>
-        </article>
-
-        <article class="karte reveal">
-          <a class="karte__bild" href="#kontakt" aria-label="Beratung anfragen">
-            <!-- Architektur-Motiv: Bogen und Durchgang -->
-            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <defs>
-                <linearGradient id="wand-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d6c7b4"/><stop offset="1" stop-color="#bba893"/></linearGradient>
-                <linearGradient id="licht-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6f0e7"/><stop offset="1" stop-color="#e5d9c9"/></linearGradient>
-              </defs>
-              <rect width="400" height="300" fill="url(#wand-b)"/>
-              <rect width="400" height="300" filter="url(#putz-fein)" opacity=".4"/>
-              <path d="M150 300 V140 a50 50 0 0 1 100 0 V300 Z" fill="url(#licht-b)"/>
-              <path d="M150 300 V140 a50 50 0 0 1 50 -50 V300 Z" fill="#000" opacity=".06"/>
-              <path d="M40 300 V170 a32 32 0 0 1 64 0 V300 Z" fill="#a8947d" opacity=".55"/>
-              <path d="M296 300 V170 a32 32 0 0 1 64 0 V300 Z" fill="#a8947d" opacity=".55"/>
-              <polygon points="150,300 250,300 330,300 70,300" fill="#9d8a74"/>
-              <polygon points="168,300 232,300 290,240 110,240" fill="#e9dfd2" opacity=".55"/>
-            </svg>
-          </a>
-          <div class="karte__text">
-            <p class="ueberzeile">Soest / Berlin</p>
-            <h3>Beratung &amp; Interim-Mandate</h3>
-            <p>Unterstützung für Eigentümer, Investoren und Property-Management-Unternehmen,
-              etwa bei Organisation, Prozessen, Mandatsübernahmen oder in Übergangsphasen.</p>
-            <a class="linie-link" href="#kontakt">Anfrage stellen</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Kontakt -->
+    <!-- 05 Kontakt -->
     <section class="abschnitt" id="kontakt">
-      <header class="kopfzeile reveal">
-        <p class="ueberzeile">Kontakt</p>
-        <h2 class="titel">Ich freue mich über <em>Ihre Nachricht</em></h2>
-      </header>
-
-      <div class="kontakt">
-        <dl class="direkt reveal">
-          <div><dt>E-Mail</dt><dd><a href="mailto:thilo@schauff.de">thilo@schauff.de</a></dd></div>
-          <!-- LINK PRÜFEN: echte LinkedIn-Profiladresse eintragen -->
-          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/thilo-schauff/" target="_blank" rel="noopener">Thilo Schauff</a></dd></div>
-          <div><dt>Standorte</dt><dd>Soest &amp; Berlin</dd></div>
-        </dl>
+      <h2 class="label mono"><span>(05)</span> Kontakt</h2>
+      <div class="abschnitt__inhalt">
+        <p class="gross reveal">Ich freue mich über Ihre Nachricht.</p>
 
         <form class="formular reveal" id="formular" action="kontakt.php" method="post" novalidate>
           <div class="feld">
-            <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120" placeholder=" ">
             <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120">
           </div>
           <div class="feld">
-            <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200" placeholder=" ">
             <label for="f-email">E-Mail</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
           </div>
           <div class="feld">
-            <input id="f-firma" name="firma" type="text" autocomplete="organization" maxlength="160" placeholder=" ">
             <label for="f-firma">Unternehmen <span class="optional">(optional)</span></label>
+            <input id="f-firma" name="firma" type="text" autocomplete="organization" maxlength="160">
           </div>
           <div class="feld">
-            <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" maxlength="60" placeholder=" ">
             <label for="f-telefon">Telefon <span class="optional">(optional)</span></label>
+            <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" maxlength="60">
           </div>
           <div class="feld feld--breit">
-            <textarea id="f-nachricht" name="nachricht" rows="4" required maxlength="5000" placeholder=" "></textarea>
-            <label for="f-nachricht">Ihre Nachricht</label>
+            <label for="f-nachricht">Nachricht</label>
+            <textarea id="f-nachricht" name="nachricht" rows="5" required maxlength="5000"></textarea>
           </div>
 
           <!-- Spam-Schutz: für Menschen unsichtbar -->
@@ -378,29 +251,29 @@
           </label>
 
           <div class="formular__fuss feld--breit">
-            <button class="knopf" type="submit">Nachricht senden</button>
+            <button class="knopf" type="submit"><span aria-hidden="true">+</span> Nachricht senden</button>
             <p class="formular__status" id="status" role="status" aria-live="polite"></p>
           </div>
         </form>
+
+        <dl class="direkt reveal">
+          <div><dt class="mono">E-Mail</dt><dd><a href="mailto:thilo@schauff.de">thilo@schauff.de</a></dd></div>
+          <!-- LINK PRÜFEN: echte LinkedIn-Profiladresse eintragen -->
+          <div><dt class="mono">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/thilo-schauff/" target="_blank" rel="noopener">Thilo Schauff ↗</a></dd></div>
+          <div><dt class="mono">Standorte</dt><dd>Soest / Berlin</dd></div>
+        </dl>
       </div>
     </section>
 
   </main>
 
-  <footer class="fuss">
-    <svg class="putz" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="100%" filter="url(#putz)"/></svg>
-    <p class="fuss__name">Thilo Schauff</p>
-    <p class="fuss__claim">Property Management · Beratung · Interim-Mandate</p>
-    <nav class="fuss__nav" aria-label="Fußnavigation">
-      <a href="#ueber">Über mich</a>
-      <a href="#werdegang">Werdegang</a>
-      <a href="#erfahrung">Erfahrung</a>
-      <a href="#heute">Heute</a>
-      <a href="#kontakt">Kontakt</a>
+  <footer class="fuss mono">
+    <span>© <span id="jahr">2026</span> Thilo Schauff</span>
+    <nav aria-label="Rechtliches">
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </nav>
-    <p class="fuss__klein">© <span id="jahr">2026</span> Thilo Schauff · Soest &amp; Berlin</p>
+    <a href="#top">Nach oben ↑</a>
   </footer>
 
   <script src="script.js" defer></script>
