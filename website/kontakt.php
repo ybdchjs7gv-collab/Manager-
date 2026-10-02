@@ -7,7 +7,7 @@
 
 // ---- Einstellungen -------------------------------------------------------
 // Hierhin gehen alle Anfragen:
-const EMPFAENGER = 'thilo@schauff.de';
+const EMPFAENGER = 'kontakt@thiloschauff.de';
 // Absender der Benachrichtigung. Muss eine Adresse der eigenen Domain sein,
 // sonst landet die Mail beim Hoster gern im Spam.
 const ABSENDER   = 'website@thiloschauff.de';

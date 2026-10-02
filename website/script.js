@@ -89,7 +89,7 @@ if (formular) {
       zeitFeld.value = Date.now();
       zeige("Vielen Dank – Ihre Nachricht ist angekommen. Ich melde mich zeitnah.", "ok");
     } catch (fehler) {
-      zeige("Das hat leider nicht geklappt. Schreiben Sie gern direkt an thilo@schauff.de.", "fehler");
+      zeige("Das hat leider nicht geklappt. Schreiben Sie gern direkt an kontakt@thiloschauff.de.", "fehler");
     } finally {
       knopf.disabled = false;
     }
