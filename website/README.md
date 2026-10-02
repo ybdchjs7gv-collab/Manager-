@@ -9,7 +9,7 @@ Einfache, statische Website für Thilo Schauff – ohne Baukasten, ohne Cookies,
 | `kontakt.php` | Verschickt das Kontaktformular per E-Mail (Empfänger oben in der Datei) |
 | `bilder/portrait.jpg` | Portrait hier ablegen (Hochformat, ca. 1200 × 1500 px). Ohne Bild erscheint ein „TS“-Monogramm auf Putz. |
 | `bilder/titelbild.jpg` | Optionales Titelbild (Querformat, ca. 2400 × 1400 px), z. B. ein Gebäude. Ohne Bild erscheint eine Putz-Struktur. |
-| `style.css`, `script.js`, `fonts/` | Gestaltung, Animationen, Formular; Schriften Cormorant Garamond & Inter Tight (lokal, OFL-Lizenz) |
+| `style.css`, `script.js`, `fonts/` | Gestaltung, Animationen, Formular; Schrift Inter Tight (lokal, OFL-Lizenz) |
 
 ## Online stellen (ca. 30 Minuten)
 
