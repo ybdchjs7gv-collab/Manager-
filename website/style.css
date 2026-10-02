@@ -1,4 +1,4 @@
-/* Thilo Schauff – Schwarz & Weiß */
+/* Thilo Schauff – weißer Grund, schwarze Schrift */
 
 @font-face {
   font-family: "Inter Tight";
@@ -15,7 +15,7 @@
   --terra: currentColor;
   --grau: #8a8a8a;
   --linie: rgba(0, 0, 0, 0.12);
-  --linie-hell: rgba(255, 255, 255, 0.2);
+  --linie-hell: rgba(0, 0, 0, 0.2);
   --rand: clamp(16px, 2.6vw, 40px);
   --schrift: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -106,7 +106,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.3;
   letter-spacing: -0.015em;
   max-width: 26ch;
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(0, 0, 0, 0.86);
 }
 
 .pfeil-link {
@@ -155,8 +155,8 @@ a { color: inherit; text-decoration: none; }
 }
 .portrait--leer {
   background:
-    radial-gradient(60% 45% at 50% 38%, rgba(255, 255, 255, 0.16), transparent 70%),
-    linear-gradient(180deg, #2a2a2a, var(--gruen-2));
+    radial-gradient(60% 45% at 50% 38%, #ffffff, transparent 70%),
+    linear-gradient(180deg, #f4f4f4, #e6e6e6);
 }
 
 .hero__fuss {
@@ -317,7 +317,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--gruen);
   color: var(--creme);
 }
-.kontakt .label { color: rgba(255, 255, 255, 0.55); }
+.kontakt .label { color: rgba(0, 0, 0, 0.55); }
 .kontakt .label span { color: var(--creme); }
 .kontakt__links { grid-column: 1 / 6; display: flex; flex-direction: column; }
 .kontakt__titel {
@@ -342,7 +342,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(0, 0, 0, 0.55);
   padding-top: 16px;
 }
 .optional { text-transform: none; letter-spacing: 0; }
@@ -360,7 +360,7 @@ a { color: inherit; text-decoration: none; }
   transition: border-color 0.25s ease;
 }
 .feld input:focus, .feld textarea:focus { border-bottom-color: var(--terra); }
-.feld .ungueltig { border-bottom-color: #ff6b6b; }
+.feld .ungueltig { border-bottom-color: #d1242f; }
 
 .honig { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
@@ -370,7 +370,7 @@ a { color: inherit; text-decoration: none; }
   align-items: flex-start;
   margin-top: 24px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(0, 0, 0, 0.65);
   cursor: pointer;
 }
 .einwilligung input { margin: 3px 0 0; accent-color: var(--terra); }
@@ -396,8 +396,8 @@ a { color: inherit; text-decoration: none; }
 .knopf:hover span { transform: translateX(5px); }
 .knopf:disabled { opacity: 0.5; cursor: wait; }
 .formular__status { margin: 0; font-size: 14px; }
-.formular__status.ok { color: #ffffff; }
-.formular__status.fehler { color: #ff6b6b; }
+.formular__status.ok { color: #1a7f37; }
+.formular__status.fehler { color: #d1242f; }
 
 .direkt { display: grid; gap: 18px; margin: 0; }
 .direkt dt { opacity: 0.55; margin-bottom: 4px; }
@@ -413,7 +413,7 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
   padding: 24px var(--rand);
   background: var(--gruen);
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(0, 0, 0, 0.55);
   border-top: 1px solid var(--linie-hell);
 }
 .fuss nav { display: flex; gap: 24px; }
@@ -474,6 +474,20 @@ body > .kopf .kopf__kontakt { background: var(--gruen); color: var(--creme); }
 .band { background: var(--creme); color: var(--gruen); border-bottom: 1px solid var(--linie); }
 .knopf { background: var(--creme); color: var(--gruen); }
 .feld input:focus, .feld textarea:focus { border-bottom-color: var(--creme); }
-.zitat-block__quelle { color: rgba(255, 255, 255, 0.55); }
+.zitat-block__quelle { color: rgba(0, 0, 0, 0.55); }
 .zeitleiste li:hover .zeitleiste__jahr { color: var(--grau); }
 .gross em { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.12em; }
+
+/* ---------- Alles auf Weiß ---------- */
+/* Die ehemals dunklen Bereiche tauschen lokal Grund- und Schriftfarbe. */
+.hero, .zitat-block, .kontakt, .fuss, .karte {
+  --gruen: #ffffff;
+  --creme: #000000;
+  --gruen-2: #f3f3f3;
+  --linie-hell: rgba(0, 0, 0, 0.12);
+}
+.band { border-top: 1px solid var(--linie); }
+.zitat-block, .kontakt { border-top: 1px solid var(--linie); }
+.karte, .karte--hell { background: var(--sand); color: #000; }
+.karte .karte__link { border-top-color: var(--linie); }
+.portrait figcaption { color: #000; opacity: 0.5; }
