@@ -197,7 +197,11 @@
       <div class="abschnitt__inhalt">
         <p class="gross reveal">Ich freue mich über Ihre Nachricht.</p>
 
-        <form class="formular reveal" id="formular" action="kontakt.php" method="post" novalidate>
+        <!-- Versand über Netlify Forms. Für Hosting mit PHP (z. B. netcup Webhosting):
+             action="kontakt.php" setzen und data-netlify / netlify-honeypot entfernen. -->
+        <form class="formular reveal" id="formular" name="kontakt" action="/?gesendet=1#kontakt" method="post"
+              data-netlify="true" netlify-honeypot="website" novalidate>
+          <input type="hidden" name="form-name" value="kontakt">
           <div class="feld">
             <label for="f-name">Name</label>
             <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120">

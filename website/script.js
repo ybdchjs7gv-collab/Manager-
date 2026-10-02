@@ -78,13 +78,25 @@ if (formular) {
     zeige("Wird gesendet …", "");
 
     try {
-      const antwort = await fetch(formular.action, {
-        method: "POST",
-        body: new FormData(formular),
-        headers: { Accept: "application/json" },
-      });
-      const daten = await antwort.json().catch(() => ({}));
-      if (!antwort.ok || !daten.ok) throw new Error(daten.fehler || "Versand fehlgeschlagen");
+      const daten = new FormData(formular);
+      if (formular.hasAttribute("data-netlify")) {
+        // Netlify Forms: Netlify nimmt die Anfrage an und schickt sie per E-Mail weiter
+        const antwort = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(daten).toString(),
+        });
+        if (!antwort.ok) throw new Error("Versand fehlgeschlagen");
+      } else {
+        // Eigenes Hosting mit PHP: kontakt.php verschickt die E-Mail
+        const antwort = await fetch(formular.getAttribute("action"), {
+          method: "POST",
+          body: daten,
+          headers: { Accept: "application/json" },
+        });
+        const ergebnis = await antwort.json().catch(() => ({}));
+        if (!antwort.ok || !ergebnis.ok) throw new Error(ergebnis.fehler || "Versand fehlgeschlagen");
+      }
       formular.reset();
       zeitFeld.value = Date.now();
       zeige("Vielen Dank – Ihre Nachricht ist angekommen. Ich melde mich zeitnah.", "ok");

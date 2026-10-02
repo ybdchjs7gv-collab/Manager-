@@ -1,0 +1,19 @@
+# Netlify: veröffentlicht nur die Website von Thilo Schauff (Ordner website/)
+[build]
+  base = "website"
+  publish = "."
+  command = ""
+
+# kontakt.php wird nur bei PHP-Hosting gebraucht – auf Netlify nicht ausliefern
+[[redirects]]
+  from = "/kontakt.php"
+  to = "/"
+  status = 404
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
