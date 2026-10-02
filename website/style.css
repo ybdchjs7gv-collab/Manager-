@@ -113,9 +113,8 @@ a:hover { color: var(--gruen); }
   object-fit: cover;
   display: block;
 }
-.kachel--portrait { grid-column: 7 / 10; }
+.kachel--portrait { grid-column: 9 / 13; max-height: 58vh; justify-self: end; width: 100%; }
 .kachel--portrait img { object-position: 50% 18%; }
-.kachel--motiv { grid-column: 10 / 13; }
 .kachel figcaption {
   position: absolute;
   left: 12px;
@@ -367,8 +366,7 @@ a:hover { color: var(--gruen); }
   .kopf__name { grid-column: 1 / 5; }
   .kopf__nav { grid-column: 5 / 13; gap: 18px; }
   .hero__text { grid-column: 1 / 13; grid-row: 2; padding-top: 24px; }
-  .kachel--portrait { grid-column: 1 / 7; }
-  .kachel--motiv { grid-column: 7 / 13; }
+  .kachel--portrait { grid-column: 1 / 9; justify-self: start; max-height: none; }
   .hero__fuss { grid-row: 3; }
   .zahlen { grid-template-columns: 1fr 1fr; }
   .zahl:nth-child(3) { padding-left: 0; border-left: 0; }

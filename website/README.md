@@ -8,7 +8,6 @@ Einfache, statische Website für Thilo Schauff – ohne Baukasten, ohne Cookies,
 | `impressum.html`, `datenschutz.html` | Rechtstexte – **gelb markierte Stellen ergänzen** |
 | `kontakt.php` | Verschickt das Kontaktformular per E-Mail (Empfänger oben in der Datei) |
 | `bilder/portrait.jpg` | Portrait (Hochformat). Wird oben rechts neben dem Text gezeigt. |
-| `bilder/objekt.jpg` | Optional: Foto eines Objekts (Hochformat) für die zweite Kachel. Ohne Bild erscheint eine Architektur-Zeichnung. |
 | `style.css`, `script.js`, `fonts/` | Gestaltung, Uhr, Animationen, Formular; Schrift Inter Tight (lokal, OFL-Lizenz) |
 
 ## Online stellen (ca. 30 Minuten)
