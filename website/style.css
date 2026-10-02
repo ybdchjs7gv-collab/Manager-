@@ -114,7 +114,7 @@ a:hover { color: var(--gruen); }
   display: block;
 }
 .kachel--portrait { grid-column: 9 / 13; max-height: 58vh; justify-self: end; width: 100%; }
-.kachel--portrait img { object-position: 50% 18%; }
+.kachel--portrait img { object-position: 50% 6%; }
 .kachel figcaption {
   position: absolute;
   left: 12px;
