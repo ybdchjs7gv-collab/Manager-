@@ -1,18 +1,18 @@
-/* Thilo Schauff – Weiß, Putz, Inter Tight */
+/* Thilo Schauff – Weiß, Schwarz, wenig Dunkelgrün */
 
 @font-face { font-family: "Inter Tight"; src: url("fonts/inter-tight.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 
 :root {
   --weiss: #ffffff;
-  --sand: #f6f2ec;
-  --stein: #d9cbb9;
-  --taupe: #8c7559;
-  --taupe-dunkel: #6f5c45;
-  --tinte: #26221d;
-  --titel: #4a4035;
-  --text: #5a5249;
-  --leise: #9a9086;
-  --linie: rgba(74, 64, 53, 0.16);
+  --sand: #f5f5f4;
+  --stein: #ededeb;
+  --taupe: #1f4630; /* Dunkelgrün – nur als Akzent */
+  --taupe-dunkel: #1f4630;
+  --tinte: #000000;
+  --titel: #000000;
+  --text: #2b2b2b;
+  --leise: #8a8a8a;
+  --linie: rgba(0, 0, 0, 0.12);
   --rand: clamp(20px, 5vw, 80px);
   --breite: 1240px;
   --serif: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -611,7 +611,7 @@ img { display: block; max-width: 100%; }
 .seite h2 { font-family: var(--serif); font-weight: 400; font-size: 28px; color: var(--titel); margin: 1.8em 0 0.4em; }
 .seite p, .seite li { color: var(--text); }
 .seite a { text-decoration: underline; text-underline-offset: 2px; }
-.platzhalter { background: #f1e3cf; padding: 0 4px; }
+.platzhalter { background: #e8efe9; padding: 0 4px; }
 .hinweis { font-size: 13px; background: var(--sand); padding: 16px 18px; color: var(--text); border-left: 2px solid var(--taupe); }
 .seite-unten { padding-top: 70px; padding-bottom: 36px; }
 .seite-unten .fuss__name { font-size: clamp(36px, 6vw, 72px); }
@@ -677,3 +677,96 @@ img { display: block; max-width: 100%; }
 .seite h2 { font-weight: 500; font-size: 22px; letter-spacing: -0.02em; }
 @media (max-width: 900px) { .kopf__name { font-size: 16px; letter-spacing: -0.01em; } }
 @media (max-width: 600px) { .hero__titel { font-size: clamp(56px, 18vw, 96px); } .direkt dd { font-size: 19px; } }
+
+/* ---------- Weiß & Schwarz, Dunkelgrün nur als Akzent ---------- */
+.putz { filter: grayscale(1) brightness(1.06) contrast(0.9) !important; }
+
+.hero { background: #f3f3f1; color: var(--tinte); }
+.hero__licht { background: radial-gradient(80% 70% at 50% 45%, rgba(255, 255, 255, 0.55), transparent 75%); }
+.hero__unter, .hero__ueber { color: var(--text); }
+.hero__ueber { color: var(--taupe); }
+.kopf { color: var(--tinte); }
+.kopf--fest { background: rgba(255, 255, 255, 0.9); }
+.knopf--hell { background: var(--tinte); border-color: var(--tinte); color: var(--weiss); backdrop-filter: none; }
+.knopf--hell::before { background: var(--taupe); }
+.knopf--hell:hover { color: var(--weiss); border-color: var(--taupe); }
+.knopf { background: var(--tinte); border-color: var(--tinte); }
+.knopf::before { background: var(--taupe); }
+.knopf:hover { border-color: var(--taupe); }
+.hero__scroll { color: var(--leise); }
+.hero__scroll i { background: rgba(0, 0, 0, 0.12); }
+.hero__scroll i::after { background: var(--tinte); }
+
+.titel em { color: var(--taupe); }
+.ueberzeile, .zeitleiste__zeit, .direkt dt { color: var(--taupe); }
+.zahl__text { color: var(--leise); }
+.initial { color: var(--tinte); }
+.partner li { color: var(--tinte); }
+
+.monogramm { color: rgba(0, 0, 0, 0.12); }
+.monogramm i { color: rgba(31, 70, 48, 0.35); }
+.portrait figcaption { color: var(--tinte); mix-blend-mode: normal; opacity: 0.6; }
+.portrait img { filter: grayscale(1); }
+
+.zitat-band { background: #f0f0ee; }
+.zitat blockquote { color: var(--tinte); }
+.zitat figcaption { color: var(--taupe); }
+.zitat figcaption::before { background: var(--taupe); }
+
+.karte__bild svg { filter: grayscale(1) contrast(1.05); }
+.abschnitt--sand { background: var(--sand); }
+
+.fuss { background: var(--weiss); color: var(--text); border-top: 1px solid var(--linie); }
+.fuss .putz { display: none; }
+.fuss__name { color: var(--tinte); }
+.fuss__claim { color: var(--taupe); }
+.fuss__nav a:hover { color: var(--taupe); }
+.fuss__klein { color: var(--leise); }
+.formular__status.ok { color: var(--taupe); }
+
+/* ---------- Kennzahlen (4) & Erfahrung ---------- */
+.zahlen { grid-template-columns: repeat(4, 1fr); }
+.zahl__wert small { font-size: 0.32em; letter-spacing: 0; margin-left: 0.25em; font-weight: 400; }
+
+.erfahrung {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: clamp(40px, 7vw, 120px);
+  align-items: start;
+}
+.assets { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linie); }
+.assets li {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--linie);
+  font-size: clamp(22px, 2.4vw, 34px);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--tinte);
+  transition: padding 0.5s var(--ease), color 0.4s ease;
+}
+.assets li span { font-size: 11px; letter-spacing: 0.2em; color: var(--leise); min-width: 2.2em; }
+.assets li:hover { padding-left: 14px; color: var(--taupe); }
+.objekte { padding: 32px; background: var(--sand); }
+.objekte dl { margin: 6px 0 0; display: grid; gap: 22px; }
+.objekte dt { font-size: 26px; font-weight: 500; letter-spacing: -0.03em; color: var(--tinte); line-height: 1.1; }
+.objekte dd { margin: 4px 0 0; color: var(--leise); font-size: 14px; }
+.objekte__text { margin: 32px 0 0; padding-top: 20px; border-top: 1px solid var(--linie); font-size: 14px; }
+
+@media (max-width: 900px) {
+  .zahlen { grid-template-columns: repeat(2, 1fr); }
+  .zahl:nth-child(3) { border-left: 0; }
+  .zahl:nth-child(n+3) { border-top: 0; }
+  .erfahrung { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .zahlen { grid-template-columns: repeat(2, 1fr); }
+  .zahl + .zahl { border-top: 1px solid var(--linie); }
+  .zahl:nth-child(2), .zahl:nth-child(4) { border-left: 1px solid var(--linie); }
+  .zahl:nth-child(n+3) { border-top: 0; }
+  .zahl__wert { font-size: 48px; }
+  .zahl__text { font-size: 10px; }
+}
+.hero__unter { max-width: 62ch; }
