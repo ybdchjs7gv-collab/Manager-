@@ -9,17 +9,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="kopf">
-    <a class="kopf__name" href="index.html">Thilo Schauff<span class="punkt">.</span></a>
-    <nav class="kopf__nav" aria-label="Hauptnavigation">
-      <a href="index.html">Start</a>
-      <a href="index.html#kontakt">Kontakt</a>
+  <header class="kopf kopf--fest">
+    <nav class="kopf__links" aria-label="Hauptnavigation">
+      <a href="index.html#ueber">Über mich</a>
+      <a href="index.html#werdegang">Werdegang</a>
+      <a href="index.html#heute">Heute</a>
     </nav>
+    <a class="kopf__name" href="index.html">Thilo Schauff</a>
+    <div class="kopf__rechts">
+      <a class="kopf__kontakt" href="index.html#kontakt">Kontakt</a>
+    </div>
   </header>
 
   <main class="seite">
-    <h1>Datenschutz<span class="punkt">.</span></h1>
-    <div class="text">
+    <h1 class="titel">Datenschutz</h1>
+    <div>
       <p class="hinweis">Entwurf – gelb markierte Angaben bitte ergänzen und den Text vor der Veröffentlichung prüfen lassen
         (z.&nbsp;B. mit dem Datenschutz-Generator von e-recht24.de oder datenschutz-generator.de).</p>
 
@@ -56,17 +60,17 @@
         Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, etwa bei der
         Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen.</p>
 
-      <p class="mono" style="margin-top:3em;color:var(--grau)">Stand: Oktober 2026</p>
+      <p style="margin-top:3em;color:var(--leise)">Stand: Oktober 2026</p>
     </div>
   </main>
 
-  <footer class="fuss mono">
-    <span>© Thilo Schauff</span>
-    <nav aria-label="Rechtliches">
+  <footer class="fuss seite-unten">
+    <p class="fuss__name">Thilo Schauff</p>
+    <nav class="fuss__nav" aria-label="Fußnavigation">
+      <a href="index.html">Startseite</a>
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </nav>
-    <a href="index.html">Zur Startseite</a>
   </footer>
 </body>
 </html>
