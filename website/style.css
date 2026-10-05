@@ -147,17 +147,20 @@ a:hover { color: var(--gruen); }
 
 .zahlen {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 0 var(--rand);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  margin: 0 var(--rand);
+  background: var(--linie);
+  border-bottom: 1px solid var(--linie);
 }
 .zahl {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 32px 16px 34px 0;
-  border-bottom: 1px solid var(--linie);
+  padding: 32px 16px 34px;
+  background: var(--papier);
 }
-.zahl + .zahl { padding-left: 16px; border-left: 1px solid var(--linie); }
+.zahl:first-child { padding-left: 0; }
 .zahl__wert {
   font-size: clamp(30px, 3.4vw, 52px);
   font-weight: 400;
@@ -369,7 +372,8 @@ a:hover { color: var(--gruen); }
   .kachel--portrait { grid-column: 1 / 7; justify-self: start; max-height: none; }
   .hero__fuss { grid-row: 3; }
   .zahlen { grid-template-columns: 1fr 1fr; }
-  .zahl:nth-child(3) { padding-left: 0; border-left: 0; }
+  .zahl:nth-child(odd) { padding-left: 0; }
+  .zahl:last-child { grid-column: 1 / -1; }
   .label, .abschnitt__inhalt, .seite > div { grid-column: 1 / 13; }
   .liste li { grid-template-columns: 9em 1fr; }
   .liste li p { grid-column: 2; }
